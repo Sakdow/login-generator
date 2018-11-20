@@ -11,8 +11,9 @@ public class LoginGeneratorTest {
     private LoginGenerator aLoginGenerator;
 
     @Before
-    public  void setUp() throws Exception {
-        String[] start = new String[] {"JROL", "BPER", "CGUR", "JRAL", "JARL1"};
+    public void setUp() throws Exception {
+        String[] start = new String[]{"JROL",
+                "BPER", "CGUR", "JDU", "JRAL", "JRAL1"};
         aLoginGenerator = new LoginGenerator(new LoginService(start));
     }
 
@@ -21,5 +22,12 @@ public class LoginGeneratorTest {
         String login = aLoginGenerator.generateLoginForNomAndPrenom("Durand",
                 "Paul");
         Assert.assertEquals("PDUR", login);
+    }
+
+    @Test
+    public void generateLoginForJRAL2() throws Exception {
+        String login = aLoginGenerator.generateLoginForNomAndPrenom("Ralling"
+                , "John");
+        Assert.assertEquals("JRAL2", login);
     }
 }
