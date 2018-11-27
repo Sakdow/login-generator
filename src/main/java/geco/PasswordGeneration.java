@@ -30,6 +30,10 @@ public class PasswordGeneration {
 
     private final char[] buf;
 
+
+    /**
+     * generate password
+     */
     public PasswordGeneration() {
         int length = 8;
         Random random = new SecureRandom();
